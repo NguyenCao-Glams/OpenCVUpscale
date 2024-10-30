@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if uploaded_image %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ url_for('static', filename=uploaded_image) }}" alt="Uploaded Image" style="max-width: 500px;"/>
+    {% endif %}
+
+    {% if upscaled_image %}
+        <h2>Upscaled Image:</h2>
+        <img src="{{ url_for('static', filename=upscaled_image) }}" alt="Upscaled Image" style="max-width: 500px;"/>
+    {% endif %}
+</body>
+</html>
