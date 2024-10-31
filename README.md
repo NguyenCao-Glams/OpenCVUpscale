@@ -9,5 +9,5 @@ Using conda to manage packages:
 ## Run local:
 `python3 app.py`
 
-## Run on H
+## Prepare requirements.txt:
 `pip list --format=freeze > requirements.txt`
